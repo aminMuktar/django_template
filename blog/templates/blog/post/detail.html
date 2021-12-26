@@ -5,7 +5,8 @@
    
     <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
     <p class="date">Published {{ post.publish }} by {{ post.author}}</p>
-    {{ post.body }}
+    {{ post.body|linebreaks }}
+    <p><a href="{% url 'blog:post_share' post.id %}">share this post</a><p>
 {% endblock content %}
 
  
